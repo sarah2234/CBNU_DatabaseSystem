@@ -23,6 +23,14 @@ discount INT NOT NULL,
 PRIMARY KEY (coupon_name)
 );
 
+CREATE TABLE User_Coupon(
+user_id CHAR(10) NOT NULL,
+coupon_name VARCHAR(255) NOT NULL,
+FOREIGN KEY (user_id) REFERENCES User (user_id),
+FOREIGN KEY (coupon_name) REFERENCES Coupon_Info (coupon_name),
+PRIMARY KEY (user_id, coupon_name)
+);
+
 CREATE TABLE Instructor(
 instructor_id CHAR(10) NOT NULL,
 instructor_name CHAR(10) NOT NULL,
